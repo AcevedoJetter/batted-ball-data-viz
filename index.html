@@ -1,11 +1,32 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8" />
-    <title>Batted Ball Data Analysis</title>
+    <title>Batted Ball Data Viz</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1 class="title">Batted Ball Data Visualization</h1>
+    <h1 class="title">Batted Ball Data Viz</h1>
+
+    <div class="dropdown">
+      <label for="outcomeSelect"
+        ><strong>Filter by Play Outcome:</strong></label
+      >
+      <select id="outcomeSelect"></select>
+    </div>
+    <svg id="field"></svg>
+
+    <div class="dropdown">
+      <label for="batterSelect"><strong>Filter by Batter:</strong></label>
+      <select id="batterSelect">
+        <option value="All">All</option>
+      </select>
+    </div>
+    <svg id="batterField"></svg>
+
+    <div id="tooltip" class="tooltip"></div>
+
+    <script src="field.js"></script>
+    <script src="batter.js"></script>
   </body>
 </html>

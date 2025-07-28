@@ -27,9 +27,3 @@ There are two visualizations that are the same when opening the local server:
 The circles in the visualizations are the distance the ball traveled and where it lands according to the data. The color in the circle means the outcome of the play.
 
 There is a tooltip that tells you who took the plate appearance, outcome, distance, LA, EV, and hang time. If you click on a circle, it will open the video of the play which it references.
-
-In the instructions it says _just be sure to include a README.txt file_, but I made this `README.md` file since it is easier to read
-
-## Questions or Comments
-
-If there are any questions or comments, please feel free to reach out to me via email: `kevin [at] acevedojetter [dot] com`

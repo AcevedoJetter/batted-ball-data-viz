@@ -43,7 +43,7 @@
           .innerRadius(0)
           .outerRadius(425)
           .startAngle(-Math.PI / 4)
-          .endAngle(Math.PI / 4)
+          .endAngle(Math.PI / 4),
       )
       .attr("stroke", "green")
       .attr("stroke-width", 2)
@@ -87,23 +87,23 @@
             "cx",
             (d) =>
               distanceScale(d.HIT_DISTANCE) *
-              Math.sin((d.EXIT_DIRECTION * Math.PI) / 180)
+              Math.sin((d.EXIT_DIRECTION * Math.PI) / 180),
           )
           .attr(
             "cy",
             (d) =>
               -distanceScale(d.HIT_DISTANCE) *
-              Math.cos((d.EXIT_DIRECTION * Math.PI) / 180)
+              Math.cos((d.EXIT_DIRECTION * Math.PI) / 180),
           )
           .on("mouseover", (event, d) => {
             const playOutcome =
               d.PLAY_OUTCOME === "undefined"
                 ? "other"
                 : d.PLAY_OUTCOME === "homerun"
-                ? "home run"
-                : d.PLAY_OUTCOME === "fielderschoice"
-                ? "fielders choice"
-                : d.PLAY_OUTCOME;
+                  ? "home run"
+                  : d.PLAY_OUTCOME === "fielderschoice"
+                    ? "fielders choice"
+                    : d.PLAY_OUTCOME;
             tooltip.transition().duration(100).style("opacity", 1);
             tooltip.html(`
           <strong>${d.BATTER}</strong><br/>
@@ -124,7 +124,7 @@
               .style("top", event.pageY - 28 + "px");
           })
           .on("mouseout", () =>
-            tooltip.transition().duration(200).style("opacity", 0)
+            tooltip.transition().duration(200).style("opacity", 0),
           ),
       (update) =>
         update
@@ -134,16 +134,16 @@
             "cx",
             (d) =>
               distanceScale(d.HIT_DISTANCE) *
-              Math.sin((d.EXIT_DIRECTION * Math.PI) / 180)
+              Math.sin((d.EXIT_DIRECTION * Math.PI) / 180),
           )
           .attr(
             "cy",
             (d) =>
               -distanceScale(d.HIT_DISTANCE) *
-              Math.cos((d.EXIT_DIRECTION * Math.PI) / 180)
+              Math.cos((d.EXIT_DIRECTION * Math.PI) / 180),
           )
           .attr("fill", (d) => colorScale[d.PLAY_OUTCOME] || "brown"),
-      (exit) => exit.transition().duration(300).attr("r", 0).remove()
+      (exit) => exit.transition().duration(300).attr("r", 0).remove(),
     );
   }
 
@@ -156,7 +156,7 @@
 
   drawField();
 
-  d3.csv("batted_ball_data.csv", d3.autoType).then((rawData) => {
+  d3.csv("../data/batted_ball_data.csv", d3.autoType).then((rawData) => {
     state.data = rawData.map((d) => ({
       ...d,
       PLAY_OUTCOME: d.PLAY_OUTCOME.trim().toLowerCase(),

@@ -2,9 +2,11 @@
 
 Data Visualization of the Excel file provided by the ATL Braves
 
-## How to run this
+## How to see the visualization
 
-If the CSV file is not available, and you only have the Excel file, please run `python3 excel-to-csv.py` and have the Excel file be named `BattedBallData.xlsx` and in the same directory as the python file.
+### Locally
+
+If the CSV file is not available, and you only have the Excel file, please run `python3 data/excel-to-csv.py` and have the Excel file be named `BattedBallData.xlsx` and in the same directory as the python file.
 
 After getting the data, please run a local server. If you are using VS Code, I recommend _Live Server_ since it is an extension.
 
@@ -16,6 +18,10 @@ Installation steps for _Live Server_ extension:
 4. if prompted, confirm that you do want to install the extension
 
 Open the port where the local server is running, and the visualizations should appear.
+
+### Online
+
+The visualization can be seen on my website: [https://acevedojetter.com/projects/batted-ball-data-viz](https://acevedojetter.com/projects/batted-ball-data-viz)
 
 ## What am I looking at after running the local server?
 
